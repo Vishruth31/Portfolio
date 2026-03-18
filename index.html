@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishruth | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-grid"></div>
+    <div class="scanline"></div>
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span class="terminal-title">vishruth-term — zsh</span>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-lines"></div>
+        <div id="typing-line" class="typing-line"></div>
+        <div id="success-message" class="success-message hidden">
+          <span class="pulse-dot"></span>
+          <span>System ready. Redirecting...</span>
+        </div>
+      </div>
+    </div>
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="main-content hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo">VG</a>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+          <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+          <li><a href="#certifications" class="nav-link" data-section="certifications">Certs</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="#home" class="mobile-nav-link" data-section="home"><span class="num">01</span>Home</a>
+      <a href="#projects" class="mobile-nav-link" data-section="projects"><span class="num">02</span>Projects</a>
+      <a href="#skills" class="mobile-nav-link" data-section="skills"><span class="num">03</span>Skills</a>
+      <a href="#certifications" class="mobile-nav-link" data-section="certifications"><span class="num">04</span>Certs</a>
+      <a href="#about" class="mobile-nav-link" data-section="about"><span class="num">05</span>About</a>
+      <a href="#contact" class="mobile-nav-link" data-section="contact"><span class="num">06</span>Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-grid"></div>
+      <div class="particles" id="particles"></div>
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      
+      <div class="hero-content">
+        <div class="greeting">
+          <span class="terminal-prompt">&gt; Hello, World!</span>
+        </div>
+        <h1 class="hero-title">
+          I'm <span class="highlight glitch" data-text="Vishruth">Vishruth</span>
+        </h1>
+        <div class="typing-container">
+          <span id="role-text" class="role-text"></span>
+          <span class="cursor"></span>
+        </div>
+        <p class="hero-description">
+          MCA student at REVA University. Building software, games, and apps 
+          with a passion for cybersecurity and futuristic systems.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/Vishruth31" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="https://linkedin.com/in/vishruth31" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="mailto:vishruthgirish31@gmail.com" class="social-link" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span class="scroll-text">SCROLL</span>
+        <svg class="scroll-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </div>
+      
+      <div class="hero-corner top-left"></div>
+      <div class="hero-corner top-right"></div>
+      <div class="hero-corner bottom-left"></div>
+      <div class="hero-corner bottom-right"></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="section-grid"></div>
+      <div class="crosshair-decoration"></div>
+      
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-label">&gt; Portfolio</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        
+        <div class="projects-grid">
+          <!-- Featured Project -->
+          <div class="project-card featured scroll-reveal">
+            <div class="featured-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>Featured Project</span>
+            </div>
+            <div class="project-content">
+              <div class="project-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <h3 class="project-title">TheSirelleco Flutter App</h3>
+              <p class="project-description">A comprehensive Flutter application with Firebase backend, featuring real-time data synchronization, user authentication, and intuitive UI/UX design for seamless user experience.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <a href="https://github.com/Vishruth31/TheSirelleco-flutter-app" target="_blank" rel="noopener" class="project-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          
+          <!-- Other Projects -->
+          <div class="project-card scroll-reveal">
+            <div class="project-content">
+              <div class="project-icon small">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+              <h3 class="project-title">Hospital Management System</h3>
+              <p class="project-description">Full-stack web application for managing hospital operations including patient records, appointments, and staff management.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
+              <a href="https://github.com/Vishruth31/Hospital-management-system" target="_blank" rel="noopener" class="project-link small">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Code
+              </a>
+            </div>
+          </div>
+          
+          <div class="project-card scroll-reveal">
+            <div class="project-content">
+              <div class="project-icon small">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+              </div>
+              <h3 class="project-title">Match Outcome Predictor</h3>
+              <p class="project-description">Machine learning model that predicts sports match outcomes using historical data and statistical analysis.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Scikit-learn</span>
+              </div>
+              <a href="https://github.com/Vishruth31/Match-Outcome-Predictor" target="_blank" rel="noopener" class="project-link small">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Code
+              </a>
+            </div>
+          </div>
+          
+          <div class="project-card scroll-reveal">
+            <div class="project-content">
+              <div class="project-icon small">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+              <h3 class="project-title">NovaChat AI Intelligent Chatbot</h3>
+              <p class="project-description">AI-powered chatbot with natural language processing capabilities for intelligent conversations.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">TensorFlow</span>
+              </div>
+              <a href="https://github.com/Vishruth31/NovaChat-AI-Intelligent-Chatbot" target="_blank" rel="noopener" class="project-link small">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Code
+              </a>
+            </div>
+          </div>
+          
+          <div class="project-card scroll-reveal">
+            <div class="project-content">
+              <div class="project-icon small">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"></line><line x1="8" y1="9" x2="8" y2="13"></line><line x1="15" y1="12" x2="15.01" y2="12"></line><line x1="18" y1="10" x2="18.01" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.983 3.704l-.667 10A4 4 0 0 0 6.014 23h11.972a4 4 0 0 0 3.983-4.296l-.667-10A4 4 0 0 0 17.32 5z"></path><path d="M12 5V3"></path><path d="M8 5v2"></path><path d="M16 5v2"></path></svg>
+              </div>
+              <h3 class="project-title">Eiden: Only The Blade Remains</h3>
+              <p class="project-description">An immersive action game built with Unity featuring combat mechanics and engaging gameplay.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Game Design</span>
+              </div>
+              <a href="https://github.com/Vishruth31/Eiden-only-the-blade-remains" target="_blank" rel="noopener" class="project-link small">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="section-grid"></div>
+      <div class="crosshair-decoration top"></div>
+      <div class="crosshair-decoration bottom"></div>
+      
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-label">&gt; Technical</span>
+          <h2 class="section-title">Skills</h2>
+        </div>
+        
+        <div class="skills-grid">
+          <div class="skill-item scroll-reveal" data-skill="C#" data-level="85">
+            <span class="skill-name">C#</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">85%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="Python" data-level="90">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">90%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="Java" data-level="80">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">80%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="C++" data-level="75">
+            <span class="skill-name">C++</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">75%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="Unity" data-level="88">
+            <span class="skill-name">Unity</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">88%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="Unreal" data-level="70">
+            <span class="skill-name">Unreal Engine</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">70%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="SQL" data-level="82">
+            <span class="skill-name">SQL</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">82%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="Flutter" data-level="85">
+            <span class="skill-name">Flutter</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">85%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="HTML/CSS" data-level="90">
+            <span class="skill-name">HTML/CSS</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">90%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="PHP" data-level="75">
+            <span class="skill-name">PHP</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">75%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="Dart" data-level="80">
+            <span class="skill-name">Dart</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">80%</span>
+          </div>
+          <div class="skill-item scroll-reveal" data-skill="JavaScript" data-level="78">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-level">78%</span>
+          </div>
+        </div>
+        
+        <div class="skill-categories">
+          <div class="skill-category scroll-reveal">
+            <h4>Development</h4>
+            <div class="category-tags">
+              <span>Web Dev</span>
+              <span>Mobile Apps</span>
+              <span>Backend</span>
+            </div>
+          </div>
+          <div class="skill-category scroll-reveal">
+            <h4>Game Dev</h4>
+            <div class="category-tags">
+              <span>Unity</span>
+              <span>Unreal Engine</span>
+              <span>C#</span>
+            </div>
+          </div>
+          <div class="skill-category scroll-reveal">
+            <h4>Data & AI</h4>
+            <div class="category-tags">
+              <span>Python</span>
+              <span>Machine Learning</span>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+      <div class="section-grid"></div>
+      <div class="crosshair-decoration"></div>
+      
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-label">&gt; Credentials</span>
+          <h2 class="section-title">Certifications</h2>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          
+          <div class="cert-card scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="cert-content">
+              <div class="cert-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              </div>
+              <div class="cert-info">
+                <div class="cert-header">
+                  <div>
+                    <h3>Generative AI</h3>
+                    <p class="cert-issuer">Google</p>
+                  </div>
+                  <div class="verified-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Verified</span>
+                  </div>
+                </div>
+                <p class="cert-description">Comprehensive training in generative AI models and applications.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cert-card scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="cert-content">
+              <div class="cert-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+              <div class="cert-info">
+                <div class="cert-header">
+                  <div>
+                    <h3>Prompt Engineering</h3>
+                    <p class="cert-issuer">OpenAI / DeepLearning.AI</p>
+                  </div>
+                  <div class="verified-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Verified</span>
+                  </div>
+                </div>
+                <p class="cert-description">Advanced techniques for crafting effective AI prompts.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cert-card scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="cert-content">
+              <div class="cert-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </div>
+              <div class="cert-info">
+                <div class="cert-header">
+                  <div>
+                    <h3>Tech SEO + SEMrush AI</h3>
+                    <p class="cert-issuer">SEMrush</p>
+                  </div>
+                  <div class="verified-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Verified</span>
+                  </div>
+                </div>
+                <p class="cert-description">Technical SEO optimization and AI-powered marketing tools.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cert-card scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="cert-content">
+              <div class="cert-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="cert-info">
+                <div class="cert-header">
+                  <div>
+                    <h3>Cisco Cybersecurity Technician</h3>
+                    <p class="cert-issuer">Cisco</p>
+                  </div>
+                  <div class="verified-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Verified</span>
+                  </div>
+                </div>
+                <p class="cert-description">Foundation in cybersecurity principles and practices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-footer scroll-reveal">
+          <p><span class="prompt">&gt;</span> Continuously learning and expanding skills in emerging technologies</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="section-grid"></div>
+      <div class="gradient-orb"></div>
+      
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-label">&gt; Profile</span>
+          <h2 class="section-title">About</h2>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-content scroll-reveal">
+            <div class="education-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <span>MCA Student at REVA University</span>
+            </div>
+            
+            <div class="about-text">
+              <p>I'm an <span class="highlight">MCA student</span> at <span class="highlight">REVA University, Bangalore</span>.</p>
+              <p>I build software, games, and apps—mostly around systems that feel fast, clean, and a little futuristic. My passion lies in creating intuitive user experiences backed by robust technical architecture.</p>
+              <p>When I'm not coding, I'm learning security tools, experimenting with AI workflows, and optimizing performance. I believe in writing clean, maintainable code that solves real problems.</p>
+            </div>
+            
+            <div class="interests">
+              <h4>Areas of Interest</h4>
+              <div class="interest-grid">
+                <div class="interest-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  <span>Software Development</span>
+                </div>
+                <div class="interest-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span>App Development</span>
+                </div>
+                <div class="interest-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"></line><line x1="8" y1="9" x2="8" y2="13"></line><line x1="15" y1="12" x2="15.01" y2="12"></line><line x1="18" y1="10" x2="18.01" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.983 3.704l-.667 10A4 4 0 0 0 6.014 23h11.972a4 4 0 0 0 3.983-4.296l-.667-10A4 4 0 0 0 17.32 5z"></path><path d="M12 5V3"></path><path d="M8 5v2"></path><path d="M16 5v2"></path></svg>
+                  <span>Game Development</span>
+                </div>
+                <div class="interest-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>Cybersecurity</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="about-buttons">
+              <a href="Vishruth.pdf" download="Vishruth_Resume.pdf" class="btn btn-primary download-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download Resume ↓
+              </a>
+              <a href="mailto:vishruthgirish31@gmail.com" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Email Me
+              </a>
+            </div>
+          </div>
+          
+          <div class="about-visual scroll-reveal">
+            <div class="stats-card">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-value">15+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value">4+</span>
+                  <span class="stat-label">Years Coding</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value">5+</span>
+                  <span class="stat-label">Certifications</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value">12+</span>
+                  <span class="stat-label">Technologies</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="terminal-card">
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="command">whoami</span>
+              </div>
+              <div class="output">Vishruth Girish</div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="command">location</span>
+              </div>
+              <div class="output">Bangalore, India</div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="command">status</span>
+              </div>
+              <div class="output success">Available for opportunities</div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="cursor-blink">_</span>
+              </div>
+            </div>
+            
+            <div class="floating-badge">
+              <span class="pulse-dot"></span>
+              <span>Open to work</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="section-grid"></div>
+      <div class="gradient-orb"></div>
+      
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <span class="section-label">&gt; Connect</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-info scroll-reveal">
+            <p class="contact-intro">Have a project in mind or want to collaborate? Feel free to reach out. I'm always open to discussing new opportunities and ideas.</p>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="contact-detail">
+                  <span class="label">Email</span>
+                  <a href="mailto:vishruthgirish31@gmail.com">vishruthgirish31@gmail.com</a>
+                </div>
+                <button class="copy-btn" data-copy="vishruthgirish31@gmail.com" aria-label="Copy email">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="contact-detail">
+                  <span class="label">Phone</span>
+                  <a href="tel:+919513292578">+91 95132 92578</a>
+                </div>
+                <button class="copy-btn" data-copy="+919513292578" aria-label="Copy phone">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-detail">
+                  <span class="label">Location</span>
+                  <span>Bangalore, India</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-section">
+              <h4>Social Links</h4>
+              <div class="social-buttons">
+                <a href="https://github.com/Vishruth31" target="_blank" rel="noopener" class="social-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  GitHub
+                </a>
+                <a href="https://linkedin.com/in/vishruth31" target="_blank" rel="noopener" class="social-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+            
+            <div class="languages">
+              <h4>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6"></path><path d="M4 14l6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="M22 22l-5-10-5 10"></path><path d="M14 18h6"></path></svg>
+                Languages
+              </h4>
+              <div class="language-tags">
+                <span class="lang-tag">English</span>
+                <span class="lang-tag">Hindi</span>
+                <span class="lang-tag">Kannada</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-wrapper scroll-reveal">
+            <div class="form-card">
+              <h3>Send a Message</h3>
+              <form action="https://formspree.io/f/mojkyyop" method="POST" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  Send Message
+                </button>
+                <input type="hidden" name="_subject" value="New Portfolio Message">
+              </form>
+              <div id="form-message" class="form-message hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-grid"></div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="#home" class="footer-logo">VG</a>
+            <p class="footer-tagline">Crafting code. Breaking limits.</p>
+          </div>
+          
+          <div class="footer-social">
+            <a href="https://github.com/Vishruth31" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/vishruth31" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="mailto:vishruthgirish31@gmail.com" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+          </div>
+          
+          <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </button>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2026 Vishruth Girish. All rights reserved.</p>
+          <p>Built with HTML + CSS + JavaScript</p>
+          <p>Made with <span class="heart">♥</span> in Bangalore</p>
+        </div>
+        
+        <div class="terminal-footer">
+          <span class="prompt">$</span> exit 0 <span class="cursor-blink">_</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
