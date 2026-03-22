@@ -10,7 +10,7 @@
 const terminalLines = [
   '> Initializing Vishruth Portfolio...',
   '> Access granted.'
-];
+].sort(() => Math.random() - 0.5);
 
 let currentLine = 0;
 let currentChar = 0;
@@ -64,10 +64,9 @@ function exitLoadingScreen() {
     loadingScreen.style.display = 'none';
     mainContent.classList.remove('hidden');
     
-    // Trigger reflow
-    void mainContent.offsetWidth;
-    
-    mainContent.classList.add('visible');
+    requestAnimationFrame(() => {
+      mainContent.classList.add('visible');
+    });
     
     // Start hero typing animation
     startHeroTyping();
@@ -113,7 +112,9 @@ function typeRole() {
     roleChar++;
   }
   
-  let typeSpeed = isDeleting ? 50 : 100;
+  let typeSpeed = isDeleting 
+    ? 40 + Math.random() * 20 
+    : 80 + Math.random() * 40;
   
   if (!isDeleting && roleChar === currentRole.length) {
     // Finished typing, pause before deleting
@@ -147,6 +148,17 @@ function createParticles() {
     particle.style.animationDuration = `${3 + Math.random() * 2}s`;
     container.appendChild(particle);
   }
+  
+  // Mouse reactive movement
+  document.addEventListener('mousemove', (e) => {
+    const particles = document.querySelectorAll('.particle');
+    particles.forEach(p => {
+      const speed = 0.02;
+      const x = (window.innerWidth / 2 - e.clientX) * speed;
+      const y = (window.innerHeight / 2 - e.clientY) * speed;
+      p.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  });
 }
 
 // ============================================
@@ -160,15 +172,21 @@ function initNavigation() {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   
   // Scroll effect for navbar
+  let ticking = false;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        updateActiveNavLink();
+        ticking = false;
+      });
+      ticking = true;
     }
-    
-    // Update active nav link
-    updateActiveNavLink();
   }, { passive: true });
   
   // Mobile menu toggle
@@ -266,6 +284,7 @@ function animateSkillBars() {
         const level = entry.target.dataset.level;
         
         if (progress && level) {
+          progress.style.transition = 'width 1.2s cubic-bezier(0.22, 1, 0.36, 1)';
           setTimeout(() => {
             progress.style.width = `${level}%`;
           }, 200);
@@ -386,6 +405,19 @@ function initGlitchEffect() {
 }
 
 // ============================================
+// CURSOR GLOW EFFECT
+// ============================================
+function initCursorGlow() {
+  const glow = document.getElementById('cursor-glow');
+  if (!glow) return;
+
+  document.addEventListener('mousemove', (e) => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+}
+
+// ============================================
 // INITIALIZE
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -403,6 +435,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize glitch effect
   initGlitchEffect();
+
+  // Initialize cursor glow
+  initCursorGlow();
 });
 
 // Handle visibility change (pause animations when tab is hidden)
@@ -412,4 +447,15 @@ document.addEventListener('visibilitychange', () => {
   } else {
     // Resume animations
   }
+});
+
+let idleTimer;
+
+document.addEventListener('mousemove', () => {
+  clearTimeout(idleTimer);
+  document.body.classList.remove('idle');
+
+  idleTimer = setTimeout(() => {
+    document.body.classList.add('idle');
+  }, 2000);
 });

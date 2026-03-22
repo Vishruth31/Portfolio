@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="cursor-glow"></div>
   <!-- Loading Screen -->
   <div id="loading-screen" class="loading-screen">
     <div class="loading-grid"></div>
@@ -131,7 +132,7 @@
         
         <div class="projects-grid">
           <!-- Featured Project -->
-          <div class="project-card featured scroll-reveal">
+          <div class="project-card featured scroll-reveal" id="featured-project">
             <div class="featured-badge">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               <span>Featured Project</span>
@@ -709,6 +710,33 @@
     </footer>
   </div>
 
+</div>
   <script src="script.js"></script>
+  <script>
+    const card = document.getElementById("featured-project");
+
+    if (card) {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateX = ((y / rect.height) - 0.5) * -10;
+        const rotateY = ((x / rect.width) - 0.5) * 10;
+
+        card.style.setProperty("--rotateX", rotateX + "deg");
+        card.style.setProperty("--rotateY", rotateY + "deg");
+        card.style.setProperty("--x", (x / rect.width) * 100 + "%");
+        card.style.setProperty("--y", (y / rect.height) * 100 + "%");
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.setProperty("--rotateX", "0deg");
+        card.style.setProperty("--rotateY", "0deg");
+        card.style.setProperty("--x", "50%");
+        card.style.setProperty("--y", "50%");
+      });
+    }
+  </script>
 </body>
 </html>
